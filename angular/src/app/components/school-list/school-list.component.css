@@ -1,0 +1,32 @@
+section {
+    border: 1px solid lightgray;
+    box-shadow: 1px 4px 4px 0 rgba(30, 30, 30, 0.5);
+}
+
+img {
+    display: inline-block;
+    max-width: 32px;
+    height: auto;
+    margin-right: 3%;
+}
+
+span img {
+    max-width: 52px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.td-img {
+    text-align: center;
+}
+
+.new-school {
+    text-align: end;
+}
+
+.new-school .btn:hover {
+    border: 1px solid blue;
+    cursor: pointer;
+}

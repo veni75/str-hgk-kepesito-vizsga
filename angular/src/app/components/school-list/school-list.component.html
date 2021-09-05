@@ -1,0 +1,32 @@
+<section class="container-md mt-3 p-3">
+    <h5><span><img src="../../../assets/factory.svg" alt="schools-icon"></span>All schools:</h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Zipcode</th>
+                <th scope="col">Street</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Classrooms</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let school of schools | async; let i = index;">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{school.name}}</td>
+                <td>{{school.city}}</td>
+                <td>{{school.zipcode}}</td>
+                <td>{{school.street}}</td>
+                <td class="td-img"><img src="../../../assets/writing.svg" alt="edit" title="Edit school" (click)="editSchool(school._id)"></td>
+                <td class="td-img">
+                    <img src="../../../assets/open.svg" alt="">
+                    <td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="new-school">
+        <button class="btn btn-success" routerLink="/school">Add School</button>
+    </p>
+</section>

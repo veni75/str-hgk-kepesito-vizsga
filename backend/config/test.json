@@ -1,0 +1,8 @@
+{
+    "database": {
+        "username": "",
+        "password": "",
+        "host": "mongodb://localhost:27017/testDiary"
+    },
+    "port": 3003
+}

@@ -1,0 +1,26 @@
+<section class="container-md mt-3 p-3">
+    <h5><span><img src="../../../assets/netoworking.svg" alt="students-icon"></span>All students:</h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Classroom</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList | async; let i = index;">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{student.firstName}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.email}}</td>
+                <td *ngIf="student.classrom">{{student.classroom.name}}</td>
+                <td *ngIf="!student.classroom">n/a</td>
+                <td><img src="../../../assets/writing.svg" alt="edit" title="Edit Student" (click)="editStudent(student._id)"></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

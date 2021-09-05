@@ -1,0 +1,32 @@
+<section>
+
+    <section class="list-section">
+
+        <table>
+            <thead>
+                <th>
+                    Classroom
+                </th>
+                <th>
+                    --
+                </th>
+            </thead>
+            <tr *ngFor="let class of classes; let i=index">
+                <td>
+                    <form #classForm="ngForm">
+                        <input type="text" [value]="class.name" [(ngModel)]="class.name" [name]="i" [ngModelOptions]="{standalone: true}" #ref>
+                    </form>
+                </td>
+                <td class="text-primary remove" (click)="updateClass(class._id, ref)">Update</td>
+            </tr>
+        </table>
+        <hr>
+
+        <p class="add-class">
+            <span>New classroom:</span>
+            <input type="text" [(ngModel)]="newClassName">
+            <button class="btn btn-success" (click)="addClass()">Save</button>
+        </p>
+
+    </section>
+</section>

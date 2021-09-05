@@ -1,0 +1,7 @@
+[
+    { "name": "Heros School", "city": "Budapest", "zipcode": 1035, "street": "Béke tér 10", "classrooms": [] },
+    { "name": "Great Maths", "city": "New York", "zipcode": 90170, "street": "Time Square 2", "classrooms": [] },
+    { "name": "Paris School", "city": "Paris", "zipcode": 22221, "street": "Boulervard 3", "classrooms": [] },
+    { "name": "Berlin Royal School ", "city": "Berlin", "zipcode": 34055, "street": "Hilfe strasse. 3", "classrooms": [] },
+    { "name": "London King School ", "city": "London", "zipcode": 99032, "street": "Buckingham str. 7", "classrooms": [] }
+]

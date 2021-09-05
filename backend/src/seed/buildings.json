@@ -1,0 +1,8 @@
+[
+    { "name": "A block", "floors": 2, "classrooms": [] },
+    { "name": "B block", "floors": 3, "classrooms": [] },
+    { "name": "C block", "floors": 4, "classrooms": [] },
+    { "name": "D block", "floors": 3, "classrooms": [] },
+    { "name": "E block", "floors": 1, "classrooms": [] }
+
+]

@@ -1,0 +1,170 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: FullStack Developers Final Exam API
+  description: An API for the FullStack Developers Final Exam
+servers:
+  - url: http://localhost:3000
+paths:
+  /student:
+    get:
+      description: Returns a list of students
+      responses:
+        '200':
+          description: List of students returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      description: Creates a new Student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          description: Student has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '400':
+          description: Invalid request when the post data is invalid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /student/{id}:
+    get:
+      description: Get a Student
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns a Student
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Student'
+        '404':
+          description: Student based on id is doesn't exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      description: Updates a Student
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          description: Student has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '400':
+          description: Invalid request when the post data is invalid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      description: Removes a Student
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Student has been deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        '404':
+          description: Student based on id is doesn't exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Student:
+      type: object
+      required:
+        - firstName
+        - lastName
+        - email
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: number
+        email:
+          type: string
+        classroom:
+          type: string
+    Error:
+      type: object
+      required:
+        - message
+        - has_error
+      properties:
+        message:
+          type: string
+        has_error:
+          type: boolean

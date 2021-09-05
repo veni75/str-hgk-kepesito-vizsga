@@ -1,0 +1,21 @@
+version: "3"
+services:
+  app:
+    container_name: api_final_exam
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - /app/node_modules
+      - .:/app
+      - ./src:/app/src
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - "27017:27017"

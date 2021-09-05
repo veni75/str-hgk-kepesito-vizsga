@@ -1,0 +1,38 @@
+section {
+    margin: 5% auto;
+}
+
+h4,
+p {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+th,
+td {
+    min-width: 100px;
+    text-align: center;
+    margin: 3% auto;
+}
+
+.list-section {
+    max-width: 50%;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    box-shadow: 1px 4px 4px 0 rgba(30, 30, 30, 0.5);
+}
+
+.add-class {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.remove:hover {
+    border: 1px solid red;
+    cursor: pointer;
+}

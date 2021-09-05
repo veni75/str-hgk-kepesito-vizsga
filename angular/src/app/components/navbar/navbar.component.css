@@ -1,0 +1,15 @@
+img {
+    display: inline-block;
+    max-width: 52px;
+    height: auto;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, rgb(255, 0, 200), rgb(173, 129, 179));
+}
+
+a {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
