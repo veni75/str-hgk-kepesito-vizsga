@@ -23,14 +23,18 @@ exports.getAllBuildingWithClassrooms = (req, res, next) => {
 };
 
 exports.updateBuilding = (req, res, next) => {
+    const { buildingId, className } = req.body;
     const validationErrors = new Model(req.body).validateSync();
     if (validationErrors) {
         return next(
-            new httpError.BadRequest(validationErrors)
+            new httpError.BadRequest('Missing field')            
         );
     }
-
-    return service.update(req.params.id, req.body)
+    const update = {
+        buildingId: buildingId,
+        className: className        
+    };
+    return service.update(req.params.id, update)
         .then(entity => {
             res.json(entity);
         })
