@@ -36,7 +36,7 @@ exports.updateBuilding = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
-            next(new httpError.InternalServerError('Building could not updated'));
+            next(new httpError.InternalServerError('Could not updated building'));
         });
 };
 
