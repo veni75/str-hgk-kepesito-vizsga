@@ -1,22 +1,22 @@
 <section class="container-md mt-3">
-    <form class="p-3" #form="ngForm" (ngSubmit)="saveStudent(form)">
+    <form class="p-3" id="studentForm" #form="ngForm" (ngSubmit)="saveStudent(form)">
         <div class="mb-3">
-            <label for="firstName" class="form-label">Firstname:</label>
-            <input type="text" class="form-control" id="firstName" [(ngModel)]="studentForm.firstName" name="firstName" required #name="ngModel">
+            <label for="firstName" class="form-label text-primary">FirstName:</label>
+            <input type="text" class="form-control text-primary" id="firstName" [(ngModel)]="studentForm.firstName" name="firstName" required #name="ngModel">
             <small class="text-danger" *ngIf="name.invalid && name.touched">Firstname is required</small>
         </div>
         <div class="mb-3">
-            <label for="lastName" class="form-label">Lastname:</label>
-            <input type="text" class="form-control" id="lastName" [(ngModel)]="studentForm.lastName" name="lastName" required #name="ngModel">
+            <label for="lastName" class="form-label text-primary">LastName:</label>
+            <input type="text" class="form-control text-primary" id="lastName" [(ngModel)]="studentForm.lastName" name="lastName" required #name="ngModel">
             <small class="text-danger" *ngIf="name.invalid && name.touched">Lastname is required</small>
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="text" class="form-control" id="email" [(ngModel)]="studentForm.email" name="email" required #name="ngModel">
+            <label for="email" class="form-label text-primary">Email:</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="studentForm.email" name="email" required #name="ngModel">
             <small class="text-danger" *ngIf="name.invalid && name.touched">Email is required</small>
         </div>
 
-        <button type="submit" [disabled]="studentForm.invalid" class="btn btn-primary">Save changes</button>
+        <button type="submit" id="save-button" [disabled]="form.invalid" class="btn btn-primary">Save changes</button>
     </form>
 
 </section>
